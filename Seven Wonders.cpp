@@ -31,6 +31,7 @@ Note
 Seven Wonders was created by Antoine Bauza, and published by Repos Production. Antoine Bauza and Repos Production do not endorse and have no involvement with the ProgNova contest.
 
  "*/
+
 #include <iostream>
 #include <valarray>
 
@@ -43,7 +44,7 @@ int ccards = 0;
 int set = 0;
 
 int main(){
-    cout<<"Enter your cards"<< endl;
+    //cout<<"Enter your cards"<< endl;
     cin>>cards;
 
     //Found out how much of each card
@@ -58,6 +59,7 @@ int main(){
     }
 
     //Sets
+
     if(tcards < gcards && tcards < ccards){
         //smallest amount of tcards
         set = tcards;
@@ -67,8 +69,10 @@ int main(){
     }else if(ccards < gcards && ccards < tcards){
         //smallest amount of ccards
         set = ccards;
+    }else if(tcards == gcards && gcards == ccards){
+        //They are equal
+        set = tcards;
     }
-
 
     //Get the score
     cout<< (pow(tcards,2)+ pow(gcards,2)+pow(ccards,2) + 7*set);
