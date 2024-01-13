@@ -35,15 +35,17 @@ Seven Wonders was created by Antoine Bauza, and published by Repos Production. A
 #include <iostream>
 #include <valarray>
 
+
 using namespace std;
 
-string cards;
-int tcards = 0;
-int gcards = 0;
-int ccards = 0;
-int set = 0;
 
-int main(){
+int sevenWondersMain(){
+    string cards;
+    int tcards = 0;
+    int gcards = 0;
+    int ccards = 0;
+    int set = 0;
+
     //cout<<"Enter your cards"<< endl;
     cin>>cards;
 
@@ -76,7 +78,7 @@ int main(){
 
     //Get the score
     cout<< (pow(tcards,2)+ pow(gcards,2)+pow(ccards,2) + 7*set);
-
+    return 0;
 
 
 }

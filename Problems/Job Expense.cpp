@@ -22,15 +22,41 @@ Limits
 
  */
 #include <iostream>
-#include <valarray>
+#include <vector>
 
 using namespace std;
 
 
-string input;
-int main(){
-    cin>>input;
-    cout<<input<<endl;
+vector<string> input;
+int number;
+string transation;
+string element;
+int expenses;
+
+int jobExpenseMain(){
+    //Get input #
+    cin>>number;
+    //Get input as string and store in vector
+    for(int i = 0; i < number; i++){
+        cin>>transation;
+        input.push_back(transation);
+
+    }
+
+    for(int i = 0; i < input.size();i++){
+        element = input.at(i);
+        //If element is negative
+        if(element.at(0) == '-'){
+            expenses += abs(stoi(element));
+
+        }
+
+    }
+    cout<< expenses<<endl;
 
 
-};
+
+
+
+
+}
