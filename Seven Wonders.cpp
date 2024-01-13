@@ -40,6 +40,8 @@ string cards;
 int tcards = 0;
 int gcards = 0;
 int ccards = 0;
+int set = 0;
+
 int main(){
     cout<<"Enter your cards"<< endl;
     cin>>cards;
@@ -55,8 +57,21 @@ int main(){
         }
     }
 
+    //Sets
+    if(tcards < gcards && tcards < ccards){
+        //smallest amount of tcards
+        set = tcards;
+    }else if(gcards < tcards && gcards < ccards){
+        //smallest amount of gcards
+        set = gcards;
+    }else if(ccards < gcards && ccards < tcards){
+        //smallest amount of ccards
+        set = ccards;
+    }
+
+
     //Get the score
-    cout<< (pow(tcards,2)+ pow(gcards,2)+pow(ccards,2));
+    cout<< (pow(tcards,2)+ pow(gcards,2)+pow(ccards,2) + 7*set);
 
 
 
